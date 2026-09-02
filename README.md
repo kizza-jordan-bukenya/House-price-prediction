@@ -1,26 +1,48 @@
-# 🏠 House Price Prediction
+# 🏠 House Price Prediction — Machine Learning Web Application
 
-A machine-learning web application that predicts the median value of a house based on its location, house characteristics, household information, and ocean proximity.
+A machine learning web application that predicts the estimated median value of a house based on its location, characteristics, and household information.
 
-## 📌 Project Overview
+##  Live Demo
 
-This project demonstrates the complete machine-learning workflow:
+Try the application here:
 
-* Data preparation and exploration
-* Handling missing values
-* Feature preprocessing
-* Model training
-* Model evaluation
-* Model comparison
-* Saving the trained model
-* Building a web application with Streamlit
-* Deploying a machine-learning model as an interactive application
+https://house-price-prediction-mdhphcrv3cbeb2pnprcts9.streamlit.app/
 
-## 📊 Dataset
+##  Project Overview
 
-The project uses the **California Housing dataset**, containing information about housing districts in California.
+This project demonstrates the development of an end-to-end machine learning application, starting from housing data preparation and model training to deployment as an interactive web application.
 
-The dataset contains **20,640 observations** and includes features such as:
+A **Random Forest Regression** model was trained to predict median house values using housing characteristics such as location, number of rooms, number of bedrooms, population, household size, and median income.
+
+The trained model is hosted on **Hugging Face**, while the application is deployed using **Streamlit Community Cloud**.
+
+##  Objectives
+
+* Build a machine learning model for house price prediction.
+* Perform data preparation and feature selection.
+* Train a Random Forest regression model.
+* Create an interactive user interface using Streamlit.
+* Host the trained machine learning model online.
+* Deploy the complete application so users can make predictions through a web browser.
+
+##  Technologies Used
+
+* **Python**
+* **Pandas**
+* **NumPy**
+* **Scikit-learn**
+* **Joblib**
+* **Streamlit**
+* **Hugging Face**
+* **GitHub**
+
+##  Machine Learning Model
+
+The project uses a **Random Forest Regression** model.
+
+### Input Features
+
+The model uses the following features:
 
 * Longitude
 * Latitude
@@ -32,122 +54,94 @@ The dataset contains **20,640 observations** and includes features such as:
 * Median income
 * Ocean proximity
 
+### Target
+
 The target variable is:
 
-**Median house value**
+**Median House Value**
 
-## 🤖 Machine Learning Model
+** Project Workflow
 
-Several approaches were considered during the project, including a regression model and a Random Forest regression model.
+Housing Dataset
+       ↓
+Data Cleaning & Preparation
+       ↓
+Feature Selection
+       ↓
+Model Training
+       ↓
+Random Forest Regression
+       ↓
+Model Saved with Joblib
+       ↓
+Model Hosted on Hugging Face
+       ↓
+Streamlit Web Application
+       ↓
+Deployment on Streamlit Community Cloud
 
-The final model is a **Random Forest Regressor** using a preprocessing pipeline.
 
-### Final Model Performance
+How the Application Works
 
-| Metric   |    Result |
-| -------- | --------: |
-| MAE      | 31,628.59 |
-| RMSE     | 48,941.95 |
-| R² Score |    0.8172 |
+1. The user enters information about a house.
+2. The application collects the input values.
+3. The inputs are converted into a Pandas DataFrame.
+4. The trained Random Forest model processes the data.
+5. The model generates an estimated house value.
+6. The predicted value is displayed to the user.
 
-The R² score indicates that the model explains approximately **81.7% of the variation** in the target variable on the test data.
+Project Structure
 
-## 🛠️ Technologies Used
-
-* Python
-* Pandas
-* NumPy
-* Scikit-learn
-* Joblib
-* Streamlit
-* Jupyter Notebook
-* Git
-* GitHub
-
-## 📁 Project Structure
-
-```text
-House price predicrion/
+text
+House-price-prediction/
 │
 ├── app.py
+├── README.md
 ├── requirements.txt
 ├── .gitignore
-├── README.md
 │
 ├── models/
-│   └── house_price_model.pkl
 │
 └── notebooks/
-    └── house_price_prediction.ipynb
-```
 
-## 🚀 Run the Application Locally
 
-### 1. Clone the repository
+Deployment
 
-```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
-```
+The project uses several technologies together:
 
-### 2. Open the project folder
+* **GitHub** — source code and project version control
+* **Hugging Face** — hosting the trained machine learning model
+* **Streamlit Community Cloud** — hosting the web application
 
-```bash
-cd "House price predicrion"
-```
+This allows the machine learning model and application to be accessed online without requiring users to run the project locally.
 
-### 3. Install the required packages
+Skills Demonstrated
 
-```bash
-pip install -r requirements.txt
-```
+This project demonstrates practical experience with:
 
-### 4. Run the Streamlit application
+* Python programming
+* Data preprocessing
+* Exploratory data analysis
+* Feature engineering
+* Machine learning
+* Regression
+* Random Forest
+* Model serialization
+* Streamlit application development
+* GitHub
+* Model hosting
+* Cloud deployment
 
-```bash
-python -m streamlit run app.py
-```
+⚠️ Disclaimer
 
-The application will open in your web browser.
+This application is intended for **educational and demonstration purposes only**. The predictions should not be considered official property valuations or professional appraisals.
 
-## 💡 How the Application Works
+Author
 
-The user enters information about a house, including:
+Kizza Jordan Bukenya
 
-* Geographic location
-* Housing median age
-* Number of rooms
-* Number of bedrooms
-* Population
-* Number of households
-* Median income
-* Ocean proximity
+Aspiring Data Scientist | Data Analyst | Machine Learning Enthusiast
 
-The trained machine-learning model processes these inputs and produces an estimated house value.
 
-## ⚠️ Limitations
 
-This application is intended for **educational and demonstration purposes**.
-
-The prediction should not be considered an official property valuation because the model is trained on historical California housing data and does not account for all factors that influence real-world property prices.
-
-## 🔮 Future Improvements
-
-Possible improvements include:
-
-* Hyperparameter tuning
-* More advanced feature engineering
-* Additional machine-learning models
-* Improved user interface
-* Interactive data visualizations
-* Deployment to the cloud
-* Integration with real-time property data
-* Development of a construction-cost prediction model
-
-## 👨‍💻 Author
-
-**Kizza Jordan Bukenya**
-
-Bachelor of Science in Quantity Surveying
-Makerere University
-
-Interested in Data Science, Machine Learning, Business Intelligence, and the application of technology in the construction industry.
+If you find this project useful, feel free to explore the repository and try the live application.
