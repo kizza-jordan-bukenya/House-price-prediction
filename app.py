@@ -2,6 +2,8 @@
 import streamlit as st
 import pandas as pd
 import joblib
+import requests
+from io import BytesIO
 
 
 # --------------------------------------------------
@@ -19,7 +21,12 @@ st.set_page_config(
 # LOAD TRAINED MODEL
 # --------------------------------------------------
 
-model = joblib.load("models/house_price_model.pkl")
+model_url = "https://huggingface.co/KizzaJordan84/house-price-prediction-model/resolve/main/house_price_model.pkl"
+
+response = requests.get(model_url)
+response.raise_for_status()
+
+model = joblib.load(BytesIO(response.content))
 
 
 # --------------------------------------------------
